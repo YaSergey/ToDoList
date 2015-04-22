@@ -28,23 +28,14 @@
     
       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showNotification) name:@"NewEvent" object:nil];
     
+//    [self reloadTableView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void) viewWillAppear:(BOOL)animated {
-
-
-  
-}
-
-//// удаление подписок на все нотификации перед закрытием экрана
-//- (void) viewWillDisappear:(BOOL)animated {
-//    
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
 
 
 
@@ -55,6 +46,7 @@
 
 - (void) showNotification {
     
+    [self.arrayEvents removeAllObjects];
     
     NSArray * array = [[UIApplication sharedApplication]scheduledLocalNotifications];
     

@@ -14,5 +14,6 @@
 @property (nonatomic, strong) NSString * stringEwentItem;
 @property (nonatomic, strong) NSDate * dateCurrentEwent;
 
+- (void) reloadTableView;
 
 @end

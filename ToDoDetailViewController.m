@@ -8,6 +8,7 @@
 
 #import "ToDoDetailViewController.h"
 
+
 @interface ToDoDetailViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 - (IBAction)saveButton:(id)sender;
@@ -72,10 +73,10 @@
     
     NSLog(@"notif %@", notif);
     
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NewEvent" object:nil];
     
     [self.navigationController popViewControllerAnimated:YES];
-
+    
 }
 
 - (IBAction)saveButton:(id)sender {
@@ -92,6 +93,7 @@
     else {
         [self set_notification];
     }
+
 }
 
 - (IBAction)datePickerAction:(UIDatePicker *)sender {
